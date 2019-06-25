@@ -2,8 +2,8 @@
 WorldInfo {
 }
 Viewpoint {
-  orientation 0 1 0 0
-  position 0.03449821261292902 0.1061593527649402 0.47132999486696026
+  orientation -0.5144575139554322 0.8436615796104558 0.15352070031102225 0.6799548540976252
+  position 0.43710298910441714 0.4073051058541829 0.7441995660660161
 }
 TexturedBackground {
 }
@@ -14,15 +14,34 @@ Floor {
 Robot {
   translation 0 0.08 0
   children [
-    Shape {
-      appearance PBRAppearance {
-        baseColor 0.8 0 0
-        roughness 1
-        metalness 0
-      }
-      geometry Box {
-        size 0.25 0.08 0.1
-      }
+    DEF SH_BODY Group {
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.8 0 0
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.25 0.08 0.1
+          }
+        }
+        Transform {
+          translation 0.1075 -0.0575 0
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.9882352941176471 0.9137254901960784 0.30980392156862746
+                roughness 1
+                metalness 0
+              }
+              geometry Sphere {
+                radius 0.0175
+              }
+            }
+          ]
+        }
+      ]
     }
     HingeJoint {
       jointParameters HingeJointParameters {
@@ -45,6 +64,9 @@ Robot {
             }
           }
         ]
+        boundingObject USE WHEEL1
+        physics Physics {
+        }
       }
     }
     HingeJoint {
@@ -62,22 +84,13 @@ Robot {
           }
         ]
         name "solid(1)"
+        boundingObject USE WHEEL1
+        physics Physics {
+        }
       }
     }
-    Transform {
-      translation 0.1075 -0.0575 0
-      children [
-        Shape {
-          appearance PBRAppearance {
-            baseColor 0.9882352941176471 0.9137254901960784 0.30980392156862746
-            roughness 1
-            metalness 0
-          }
-          geometry Sphere {
-            radius 0.0175
-          }
-        }
-      ]
-    }
   ]
+  boundingObject USE SH_BODY
+  physics Physics {
+  }
 }
