@@ -2,8 +2,8 @@
 WorldInfo {
 }
 Viewpoint {
-  orientation -0.5144575139554322 0.8436615796104558 0.15352070031102225 0.6799548540976252
-  position 0.43710298910441714 0.4073051058541829 0.7441995660660161
+  orientation -0.5384594726794519 0.8344069039482168 0.11758620210431853 0.5119440206002716
+  position 0.6294614947693983 0.5011730008575194 1.3175182076197036
 }
 TexturedBackground {
 }
@@ -12,7 +12,7 @@ TexturedBackgroundLight {
 Floor {
 }
 Robot {
-  translation 0 0.08 0
+  translation 0 0.075 0
   children [
     DEF SH_BODY Group {
       children [
@@ -48,9 +48,16 @@ Robot {
         axis 0 0 1
         anchor -0.05 0 0.065
       }
+      device [
+        RotationalMotor {
+          name "motor_right"
+          maxVelocity 523.5987
+          maxTorque 0.03
+        }
+      ]
       endPoint Solid {
         translation -0.05 0 0.065
-        rotation 1 0 0 1.5707996938995747
+        rotation 1 0 0 1.5707996938995745
         children [
           Shape {
             appearance DEF BLACK PBRAppearance {
@@ -74,9 +81,16 @@ Robot {
         axis 0 0 1
         anchor -0.05 0 -0.065
       }
+      device [
+        RotationalMotor {
+          name "motor_left"
+          maxVelocity 523.99
+          maxTorque 0.03
+        }
+      ]
       endPoint Solid {
         translation -0.05 0 -0.065
-        rotation 1 0 0 1.5707996938995747
+        rotation 1 0 0 1.5707996938995745
         children [
           Shape {
             appearance USE BLACK
