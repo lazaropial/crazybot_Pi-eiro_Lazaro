@@ -2,8 +2,8 @@
 WorldInfo {
 }
 Viewpoint {
-  orientation -0.5384594726794519 0.8344069039482168 0.11758620210431853 0.5119440206002716
-  position 0.6294614947693983 0.5011730008575194 1.3175182076197036
+  orientation 1 0 0 4.71238898038469
+  position 0.12499999999999997 0.4607486651982621 -2.141335249107657e-17
 }
 TexturedBackground {
 }
@@ -103,8 +103,31 @@ Robot {
         }
       }
     }
+    DistanceSensor {
+      translation 0.125 0 0
+      children [
+        DEF SENS Shape {
+          appearance PBRAppearance {
+            baseColor 0.20392156862745098 0.396078431372549 0.6431372549019608
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      boundingObject USE SENS
+      lookupTable [
+        0 0 0
+        0.02 0 0
+        5 1660 0
+      ]
+      resolution 1
+    }
   ]
   boundingObject USE SH_BODY
   physics Physics {
   }
+  controller "crazybot_Pieiro_Lazaro"
 }
