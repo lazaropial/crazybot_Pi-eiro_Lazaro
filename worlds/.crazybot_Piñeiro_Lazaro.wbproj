@@ -8,4 +8,4 @@ selectionDisabled: 0
 viewpointLocked: 0
 orthographicViewHeight: 1
 textFiles: 0 "controllers/crazybot_Pieiro_Lazaro/crazybot_Pieiro_Lazaro.c"
-globalOptionalRendering: CoordinateSystem::JointAxes
+globalOptionalRendering: CoordinateSystem::JointAxes::DistanceSensorRays
