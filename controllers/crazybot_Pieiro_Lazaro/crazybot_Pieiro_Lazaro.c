@@ -50,7 +50,7 @@ int main(int argc, char **argv)
    WbDeviceTag wheel_right = wb_robot_get_device("motor_right");
    WbDeviceTag wheel_left = wb_robot_get_device("motor_left");
    WbDeviceTag ps_left = wb_robot_get_device("position_left");
-   WbDeviceTag ps_right = wb_robot_get_device("position_left");
+   WbDeviceTag ps_right = wb_robot_get_device("position_right");
    
    wb_position_sensor_enable(ps_left, TIME_STEP);
    wb_position_sensor_enable(ps_right, TIME_STEP);
@@ -113,7 +113,7 @@ int main(int argc, char **argv)
     wb_motor_set_position(wheel_right, INFINITY);
     wb_motor_set_velocity(wheel_right, -15);
     wb_motor_set_position(wheel_left, INFINITY);
-    wb_motor_set_velocity(wheel_left, 0);
+    wb_motor_set_velocity(wheel_left, 15);
     }
    
     if(key==WB_KEYBOARD_RIGHT){
